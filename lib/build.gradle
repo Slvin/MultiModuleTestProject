@@ -1,0 +1,30 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'java-test-fixtures'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+sourceSets {
+    testEnv {
+        java {
+            java.srcDir file('src/testEnv/java')
+        }
+        jar { from sourceSets.testEnv.output }
+    }
+}
+
+configurations {
+    testEnv
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'junit:junit:4.12'
+    testFixturesApi "junit:junit:4.12"
+    testFixturesImplementation "org.mockito:mockito-core:3.5.13"
+}

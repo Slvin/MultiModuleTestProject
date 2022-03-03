@@ -1,0 +1,15 @@
+rootProject.name = "MultiModuleTestProject"
+include ':app'
+include ':lib'
+include ':lib2'
+include ':main'
+include ':javalib'
+include ':androidLib'
+include ':dynamicfeature'
+include ':javalib:nested'
+include ':testModuleForApp'
+include ':kaptAndroid'
+include ':aarWrapperLib'
+include ':jarWrapperLib'
+
+includeBuild('another-build')

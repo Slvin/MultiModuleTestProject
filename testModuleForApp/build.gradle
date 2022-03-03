@@ -1,0 +1,16 @@
+apply plugin: 'com.android.test'
+
+android {
+    compileSdkVersion 28
+
+    targetProjectPath ':app'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'junit:junit:4.12'
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
